@@ -1,0 +1,108 @@
+@import "./partials/setup";
+@import "./partials/variables";
+
+
+// GLOBAL STYLES 
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $body-font;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+}
+
+h1,
+h2,
+h3 {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+// HEADER STYLES
+
+.hero {
+  background: url(./assets/header.jpg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  @include flexCenter;
+  flex-direction: column;
+  position: relative;
+}
+
+.infoContainer {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.fa-info-circle {
+  color: $secondary-color;
+  font-size: 4rem;
+  transition: 0.7s all ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.3);
+  }
+}
+
+.logo {
+  width: 800px;
+}
+
+.startBtn {
+  background-color: $primary-color;
+  color: $secondary-color;
+  font-family: $heading-font;
+  padding: 15px 40px;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 20px;
+  margin-left: 30px;
+  &:hover {
+    background-color: $secondary-color;
+    color: $primary-color;
+  }
+}
+
+.selectBtn {
+  background-color: $primary-color;
+  color: $secondary-color;
+  font-family: $heading-font;
+  padding: 15px 40px;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 20px;
+  margin-left: 30px;
+  cursor: pointer;
+
+  option {
+    font-family: $heading-font;
+  }
+}
+
+// MAIN STYLES
+
+.main {
+
+}
+
+
+footer {
+  background: $primary-color;
+  color: $secondary-color;
+  text-align: center;
+  padding: 5px;
+}
