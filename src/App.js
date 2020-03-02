@@ -119,14 +119,13 @@ scrollToTop = () => {
 // filteredGenreArray = ()
 
 render () {
+
 console.log('render');
+console.log(this.state.event);
 	return (
 		<div className="App">
 		{/* <Header /> */}
 			<div className="hero" id="header">
-				{/* <div className="infoContainer">
-				<i className="fas fa-info-circle"></i>
-				</div> */}
 				<div className="title">
 				<img
 					src={require("./assets/blackWhite-logo.png")}
@@ -159,13 +158,16 @@ console.log('render');
 				</button>
 				</form>
 			</div>
-
-			<Results
-				event={this.state.event}
-				genreTitle={this.state.selectedGenreTitle}
-				userSelectedEvent={this.state.userSelectedEvent}
-				scrollToTop={this.scrollToTop}
-			/>
+			{
+				this.state.event === undefined ? null : 
+				<Results
+					event={this.state.event}
+					genreTitle={this.state.selectedGenreTitle}
+					userSelectedEvent={this.state.userSelectedEvent}
+					scrollToTop={this.scrollToTop}
+				/> 
+			}
+				
 			<Footer />
 		</div>
 	);
