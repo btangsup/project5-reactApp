@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import Results from './Results';
 import { scroller } from 'react-scroll';
 import Footer from './Footer';	
-import Swal from 'sweetalert2'; // implement if user does not select an option from the genre
+// import Swal from 'sweetalert2'; // implement if user does not select an option from the genre
 import axios from 'axios';
 import './App.scss';
 
@@ -35,6 +35,7 @@ this.state = {
 		filteredGenreResult: [],
 		musicGenreResults: [],
 		genreSelection: "",
+		selectedGenreTitle: "",
 		userSelectedEvent: false,
 	}
 }
@@ -45,12 +46,14 @@ componentDidMount() {
 
 //THIS SELECT BUTTON IS USED FOR changing the genre, making sure we get a value from switching genre!
 handleSelectGenreChange = (event) => {
-console.log(`Selecting Genre has changed to ${event.target.value}`);
-
+	console.log(event.target.selectedOptions[0].text);
+	
 	this.setState ({
-	genreSelection: event.target.value, //the state needs to be updated to the new genre selection state
+		genreSelection: event.target.value,
+		selectedGenreTitle: event.target.selectedOptions[0].text, //the state needs to be updated to the new genre selection state
 	})
 
+	
 }
 
 //prevent form default and this is targeted towards the BUTTON for submitting genre
@@ -58,8 +61,13 @@ console.log(`Selecting Genre has changed to ${event.target.value}`);
 handleFormSubmit = (event) => {
 	event.preventDefault();
 	console.log('being clicked');
-
+	
 	console.log('componentDidMount');
+	//create a function that if a user doesn't select anything, prompt a warning
+
+	// if (this.handleFormSubmit.value === ""){
+	// 	alert('please pick something');
+	// }
 
 	axios({
 		url: "https://app.ticketmaster.com/discovery/v2/events.json",
@@ -79,21 +87,33 @@ handleFormSubmit = (event) => {
 			response = response.data._embedded.events;
 			console.log(response);
 
-
 			this.setState({
 				event: response,
 				userSelectedEvent:true,
-		})
+			})
+
 			scroller.scrollTo('main', { //this will auto scroll to the main after submitting a genre
 				smooth: true,
 				duration: 1000,
 			});
-	});
+		});
+
+
 
 	// create conditionals when a genre has been selected
+	
 
 }
 
+// button to scroll back to top when being clicked, because its outside of state. don't need to put this.state
+
+scrollToTop = () => {
+	console.log('being clicked');
+	scroller.scrollTo('header', {
+		smooth: true,
+		duration: 900,
+	});
+}
 
 
 // filteredGenreArray = ()
@@ -104,14 +124,14 @@ console.log('render');
 		<div className="App">
 		{/* <Header /> */}
 			<div className="hero" id="header">
-				<div className="infoContainer">
+				{/* <div className="infoContainer">
 				<i className="fas fa-info-circle"></i>
-				</div>
+				</div> */}
 				<div className="title">
 				<img
 					src={require("./assets/blackWhite-logo.png")}
 					className="logo"
-					alt="Logo"
+					alt="Music T.O. Event Logo"
 				/>
 				</div>
 
@@ -142,7 +162,9 @@ console.log('render');
 
 			<Results
 				event={this.state.event}
+				genreTitle={this.state.selectedGenreTitle}
 				userSelectedEvent={this.state.userSelectedEvent}
+				scrollToTop={this.scrollToTop}
 			/>
 			<Footer />
 		</div>
@@ -152,15 +174,7 @@ console.log('render');
 
 export default App;
 
-/* classification ID
-
-dance/edm = KnvZfZ7vAvF
-rock = KnvZfZ7vAeA
-pop = KZazBEonSMnZfZ7v6F1
-country = KnvZfZ7vAv6
-k pop = KZazBEonSMnZfZ7vkE1
-r&b = KnvZfZ7vAee
-rap = KnvZfZ7vAv1
+/* 
 
 PSEUDO CODE
 

@@ -1,7 +1,8 @@
 @import "./partials/setup";
+@import "./partials/variables";
 @import "./partials/global";
 @import "./partials/footer";
-@import "./partials/variables";
+@import "./partials/media-query";
 
 // GLOBAL STYLES 
 
@@ -68,7 +69,6 @@ right: 20px;
 	width: 800px;
 	padding-bottom: 20px;
 }
-
 
 .startBtn {
 	background-color: $primary-color;
@@ -138,7 +138,6 @@ right: 20px;
 	position: relative;
 }
 
-
 .eventTitle {
 	text-transform: uppercase;
 	font-family: $heading-font;
@@ -173,7 +172,7 @@ right: 20px;
 	color: $primary-color;
 	background-color: transparent;
 	border: none;
-	font-size: 5rem;
+	font-size: 4rem;
 	text-align: center;
 	display: block;
 	margin: 0 auto;
@@ -188,12 +187,7 @@ right: 20px;
 	color: $secondary-color;
 }
 
-footer {
-	background: $primary-color;
-	color: $secondary-color;
-	text-align: center;
-	padding: 5px;
-}
+
 
 // MEDIA QUERIES 
 
@@ -215,8 +209,38 @@ footer {
 }
 
 @media (max-width: 650px) {
+
+	.hero {
+		background-position: center;
+		
+	}
+
+	.logo {
+		padding: 0 20px;
+	}
 	.resultContainer {
 		width: 95%;
 		margin: 10px auto;
 	}
+
+	.selectBtn ,
+	.startBtn {
+		padding: 10px 25px;
+		margin-left: 5px;
+		margin-top: 25px;
+	}
+
+	.genreTitle {
+		font-size: 2rem;
+	}
 }
+
+@media (max-width:400px) {
+	.selectBtn ,
+	.startBtn {
+		padding: 10px 10px;
+		margin-left: 5px;
+		margin-top: 25px;
+	}
+}
+
