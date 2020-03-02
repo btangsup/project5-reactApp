@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/project5-reactApp/static/css/main.b9179683.chunk.css",
+    "main.js": "/project5-reactApp/static/js/main.c738b826.chunk.js",
+    "main.js.map": "/project5-reactApp/static/js/main.c738b826.chunk.js.map",
+    "runtime-main.js": "/project5-reactApp/static/js/runtime-main.6b007c8c.js",
+    "runtime-main.js.map": "/project5-reactApp/static/js/runtime-main.6b007c8c.js.map",
+    "static/js/2.224d5401.chunk.js": "/project5-reactApp/static/js/2.224d5401.chunk.js",
+    "static/js/2.224d5401.chunk.js.map": "/project5-reactApp/static/js/2.224d5401.chunk.js.map",
+    "index.html": "/project5-reactApp/index.html",
+    "precache-manifest.768e2789ea6242f76709df1ddedc4e4f.js": "/project5-reactApp/precache-manifest.768e2789ea6242f76709df1ddedc4e4f.js",
+    "service-worker.js": "/project5-reactApp/service-worker.js",
+    "static/css/main.b9179683.chunk.css.map": "/project5-reactApp/static/css/main.b9179683.chunk.css.map",
+    "static/js/2.224d5401.chunk.js.LICENSE.txt": "/project5-reactApp/static/js/2.224d5401.chunk.js.LICENSE.txt",
+    "static/media/blackWhite-logo.png": "/project5-reactApp/static/media/blackWhite-logo.f1f414da.png",
+    "static/media/App.scss": "/project5-reactApp/static/media/header.98424f33.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6b007c8c.js",
+    "static/js/2.224d5401.chunk.js",
+    "static/css/main.b9179683.chunk.css",
+    "static/js/main.c738b826.chunk.js"
+  ]
+}
