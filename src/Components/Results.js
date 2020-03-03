@@ -7,7 +7,7 @@ render() {
 	return (
 		<main id="main">
 		<div className="genreBackground">
-			<h1 className="genreTitle">{this.props.genreTitle === "" ? "Random Genre" : `🎵 T.O. ${this.props.genreTitle} Results🎵`}</h1>
+			<h2 className="genreTitle">{this.props.genreTitle === "" ? "Random Genre" : `🎵 T.O. ${this.props.genreTitle} Results🎵`}</h2>
 		</div>
 			<ul className="flexContainer wrapper">
 				{
