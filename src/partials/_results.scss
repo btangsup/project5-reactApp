@@ -1,0 +1,80 @@
+// RESULT STYLES //
+
+.genreBackground {
+	height: 30vh;
+	background-color: $primary-color;
+	@include flexCenter;
+}
+
+.genreTitle {
+	color: $secondary-color;
+	font-family: $heading-font;
+	text-transform: uppercase;
+}
+
+.flexContainer {
+	display: flex;
+	flex-flow: row wrap;
+	padding: 50px 0;
+}
+
+.resultContainer {
+	list-style: none;
+	width: calc(33.3% - 20px);
+	margin: 10px;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	padding: 25px;
+	background-color: $secondary-color;
+	color: $primary-color;
+	border-radius: 25px;
+	text-align: center;
+	border: 2px solid $primary-color;
+	position: relative;
+}
+
+.eventTitle {
+	text-transform: uppercase;
+	font-family: $heading-font;
+	font-size: 2.8rem;
+	border-bottom: 2px solid $primary-color;
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.eventImg {
+	padding: 15px 0;
+	border-radius: 15px;
+	max-height: 300px;
+}
+
+.ticketLink {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: $primary-color;
+	background-color: none;
+	border: 3px solid $primary-color;
+	padding: 15px 30px;
+	transition: 0.3s ease;
+	&:hover,
+	&:focus {
+		color: $secondary-color;
+		background-color: $primary-color;
+	}
+}
+
+.scrollToTopBtn {
+	color: $primary-color;
+	background-color: transparent;
+	border: none;
+	font-size: 4rem;
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+	transition: 0.3s ease-in;
+
+	&:hover {
+		transform: scale(1.1);
+	}
+}

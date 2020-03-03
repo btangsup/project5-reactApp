@@ -1,0 +1,74 @@
+
+// FOOTER STYLES //
+
+.ticketmaster {
+	color: $secondary-color;
+}
+
+footer {
+	background: $primary-color;
+	color: $secondary-color;
+	text-align: center;
+	padding: 15px;
+	font-size: 2rem;
+}
+
+// MEDIA QUERIES //
+
+@media (max-width: 1150px) {
+	.wrapper {
+		width: 100%;
+	}
+	.resultContainer {
+		width: calc(50% - 10px);
+		margin: 5px;
+	}
+}
+
+@media (max-width: 850px) {
+	.resultContainer {
+		width: 80%;
+		margin: 20px auto;
+	}
+}
+
+@media (max-width: 650px) {
+
+	.hero {
+		background-position: center;
+		
+	}
+
+	.logo {
+		padding: 0 20px;
+	}
+	.resultContainer {
+		width: 95%;
+		margin: 10px auto;
+	}
+
+	.selectBtn ,
+	.startBtn {
+		padding: 10px 25px;
+		margin-left: 5px;
+		margin-top: 25px;
+	}
+
+	.genreTitle {
+		font-size: 2rem;
+	}
+
+	footer {
+		font-size: 1.6rem;
+	}
+}
+
+@media (max-width:400px) {
+	.selectBtn ,
+	.startBtn {
+		padding: 10px 10px;
+		margin-left: 5px;
+		margin-top: 25px;
+	}
+}
+

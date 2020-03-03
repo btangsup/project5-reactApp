@@ -11,7 +11,7 @@ render() {
 	return (
 		<main id="main">
 		<div className="genreBackground">
-			<h1 className="genreTitle">{this.props.genreTitle === "" ? "Genre" : `🎵 T.O. ${this.props.genreTitle} Results🎵`}</h1>
+			<h1 className="genreTitle">{this.props.genreTitle === "" ? "Random Genre" : `🎵 T.O. ${this.props.genreTitle} Results🎵`}</h1>
 		</div>
 				<ul className="flexContainer wrapper">
 					{
@@ -30,11 +30,11 @@ render() {
 									/>
 								</div>
 								<a className="ticketLink" target="_blank" href={event.url}>Buy Tickets</a>
+								{/* <a href="">{event._embedded.attractions[0].name}</a>  look at this for help cue*/}
 							</li>
 						);	
 						}) : console.log('nothing')  
 					}
-
 				</ul>
 				<button className="scrollToTopBtn" onClick={this.props.scrollToTop}>
 					<i className="far fa-arrow-alt-circle-up"></i>

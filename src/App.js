@@ -1,26 +1,17 @@
 import React, {Component} from 'react';
 // import Header from './Header';
-import Results from './Results';
 import { scroller } from 'react-scroll';
-import Footer from './Footer';	
-// import Swal from 'sweetalert2'; // implement if user does not select an option from the genre
+import Preloader from './Preloader';
+import Results from './Components/Results';
+import Footer from './Components/Footer';	
 import axios from 'axios';
 import './App.scss';
 
-
-/* PSEUDO CODE
-
-0. Mount the component 
-1. User selects a genre
-2. when genre is selected, axios call is made
-3. through api call, filter out results to the specific genre and put in states
-4. create
+/*
 
 Things to do: 
-1. Links should open in new tab
-2. Fix font 
-3. On home page, either a) make it so that when you choose a category, it brings you to the page or b) make the arrow more visible 
-4. Optional: after you select the event and click GO, it should automatically scroll down  
+1. Add a preloader 
+2. Compress Img
 5. Make photo sizes the same size 
 
 */
@@ -37,10 +28,12 @@ this.state = {
 		genreSelection: "",
 		selectedGenreTitle: "",
 		userSelectedEvent: false,
+		isLoading: false,
 	}
 }
 
 componentDidMount() {
+
 }
 
 
@@ -52,8 +45,6 @@ handleSelectGenreChange = (event) => {
 		genreSelection: event.target.value,
 		selectedGenreTitle: event.target.selectedOptions[0].text, //the state needs to be updated to the new genre selection state
 	})
-
-	
 }
 
 //prevent form default and this is targeted towards the BUTTON for submitting genre
@@ -69,6 +60,10 @@ handleFormSubmit = (event) => {
 	// 	alert('please pick something');
 	// }
 
+	this.setState ({
+		isLoading: true,
+	})
+
 	axios({
 		url: "https://app.ticketmaster.com/discovery/v2/events.json",
 		method: "GET",
@@ -82,27 +77,22 @@ handleFormSubmit = (event) => {
 			genreId: this.state.genreSelection,
 		}
 		}).then((response) => {
-			// need to narrow down api call
-
-			response = response.data._embedded.events;
+			response = response.data._embedded.events; //narrows down api call and saves as a variable
 			console.log(response);
 
 			this.setState({
 				event: response,
 				userSelectedEvent:true,
+				isLoading: false,
 			})
 
 			scroller.scrollTo('main', { //this will auto scroll to the main after submitting a genre
 				smooth: true,
-				duration: 1000,
+				duration: 500,
 			});
 		});
 
-
-
 	// create conditionals when a genre has been selected
-	
-
 }
 
 // button to scroll back to top when being clicked, because its outside of state. don't need to put this.state
@@ -111,67 +101,68 @@ scrollToTop = () => {
 	console.log('being clicked');
 	scroller.scrollTo('header', {
 		smooth: true,
-		duration: 900,
+		duration: 700,
 	});
 }
 
 
-// filteredGenreArray = ()
+	render () {
 
-render () {
+	console.log('render');
+	console.log(this.state.event);
+		return (
+			<div className="App">
+			{/* <Header /> */}
+				<div className="hero" id="header">
+					<div className="title">
+					<img
+						src={require("./assets/blackWhite-logo.png")}
+						className="logo"
+						alt="Music T.O. Event Logo"
+						/>
+					</div>
 
-console.log('render');
-console.log(this.state.event);
-	return (
-		<div className="App">
-		{/* <Header /> */}
-			<div className="hero" id="header">
-				<div className="title">
-				<img
-					src={require("./assets/blackWhite-logo.png")}
-					className="logo"
-					alt="Music T.O. Event Logo"
-				/>
+					<form action="" className="form">
+						<label htmlFor="whichGenre"></label>
+						<select
+							name="whichGenre"
+							id="whichGenre"
+							className="selectBtn"
+							onChange={this.handleSelectGenreChange}
+							>
+							<option value="">Choose a Genre</option>
+							<option value="KnvZfZ7vAeA">Rock</option>
+							<option value="KnvZfZ7vAvF">EDM</option>
+							<option value="KnvZfZ7vAee">R&B</option>
+							<option value="KnvZfZ7vAv1">Rap</option>
+							<option value="KnvZfZ7vAvE">Jazz</option>
+						</select>
+						<button
+							className="startBtn"
+							type="submit"
+							onClick={this.handleFormSubmit}
+							>
+							T.O. the Event
+						</button>
+					</form>
+				{this.state.isLoading ? <Preloader />: null}
 				</div>
-
-				<form action="" className="form">
-				<select
-					name="whichGenre"
-					id="whichGenre"
-					className="selectBtn"
-					onChange={this.handleSelectGenreChange}
-				>
-					<option value="">Choose a Genre</option>
-					<option value="KnvZfZ7vAeA">Rock</option>
-					<option value="KnvZfZ7vAvF">EDM</option>
-					<option value="KnvZfZ7vAv6">Country</option>
-					<option value="KnvZfZ7vAee">R&B</option>
-					<option value="KnvZfZ7vAv1">Rap</option>
-					<option value="KnvZfZ7vAvE">Jazz</option>
-				</select>
-				<button
-					className="startBtn"
-					type="submit"
-					onClick={this.handleFormSubmit}
-				>
-					T.O. the Event
-				</button>
-				</form>
+				{
+					// return (
+					// 	{this.state.isLoading ? <p>is Loading</p> : null}
+					this.state.event === undefined ? null : 
+					<Results
+						event={this.state.event}
+						genreTitle={this.state.selectedGenreTitle}
+						userSelectedEvent={this.state.userSelectedEvent}
+						scrollToTop={this.scrollToTop}
+						/> 
+						
+				}
+				<Footer />
 			</div>
-			{
-				this.state.event === undefined ? null : 
-				<Results
-					event={this.state.event}
-					genreTitle={this.state.selectedGenreTitle}
-					userSelectedEvent={this.state.userSelectedEvent}
-					scrollToTop={this.scrollToTop}
-				/> 
-			}
-				
-			<Footer />
-		</div>
-	);
-}
+		);
+	}
 }
 
 export default App;

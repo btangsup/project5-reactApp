@@ -1,4 +1,4 @@
-// VARIABLE STYLES 
+// VARIABLE STYLES //
 
 $primary-color: #3E2E49;
 $secondary-color: #FFFAFA;
@@ -6,7 +6,7 @@ $secondary-color: #FFFAFA;
 $heading-font: 'Hammersmith One', 'Arial' ;
 $body-font: 'Saira Semi Condensed', 'Helvetica' ;
 
-
+// MIXINS // 
 
 @mixin flexCenter {
     display: flex;
