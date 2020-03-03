@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/Music-TO-Event/static/css/main.3b10c460.chunk.css",
-    "main.js": "/Music-TO-Event/static/js/main.2bc8916d.chunk.js",
-    "main.js.map": "/Music-TO-Event/static/js/main.2bc8916d.chunk.js.map",
-    "runtime-main.js": "/Music-TO-Event/static/js/runtime-main.16d6d55c.js",
-    "runtime-main.js.map": "/Music-TO-Event/static/js/runtime-main.16d6d55c.js.map",
-    "static/js/2.224d5401.chunk.js": "/Music-TO-Event/static/js/2.224d5401.chunk.js",
-    "static/js/2.224d5401.chunk.js.map": "/Music-TO-Event/static/js/2.224d5401.chunk.js.map",
-    "index.html": "/Music-TO-Event/index.html",
-    "precache-manifest.b0b4da72945cf60fb688fde40a16f5c7.js": "/Music-TO-Event/precache-manifest.b0b4da72945cf60fb688fde40a16f5c7.js",
-    "service-worker.js": "/Music-TO-Event/service-worker.js",
-    "static/css/main.3b10c460.chunk.css.map": "/Music-TO-Event/static/css/main.3b10c460.chunk.css.map",
-    "static/js/2.224d5401.chunk.js.LICENSE.txt": "/Music-TO-Event/static/js/2.224d5401.chunk.js.LICENSE.txt",
-    "static/media/blackWhite-logo.png": "/Music-TO-Event/static/media/blackWhite-logo.f1f414da.png",
-    "static/media/App.scss": "/Music-TO-Event/static/media/header.b9cf413b.jpg"
+    "main.css": "/project5-reactApp/static/css/main.b6a3d257.chunk.css",
+    "main.js": "/project5-reactApp/static/js/main.164ba6e4.chunk.js",
+    "main.js.map": "/project5-reactApp/static/js/main.164ba6e4.chunk.js.map",
+    "runtime-main.js": "/project5-reactApp/static/js/runtime-main.6b007c8c.js",
+    "runtime-main.js.map": "/project5-reactApp/static/js/runtime-main.6b007c8c.js.map",
+    "static/js/2.224d5401.chunk.js": "/project5-reactApp/static/js/2.224d5401.chunk.js",
+    "static/js/2.224d5401.chunk.js.map": "/project5-reactApp/static/js/2.224d5401.chunk.js.map",
+    "index.html": "/project5-reactApp/index.html",
+    "precache-manifest.30ce1fe0f841acfeb98bf19ac2eec3a0.js": "/project5-reactApp/precache-manifest.30ce1fe0f841acfeb98bf19ac2eec3a0.js",
+    "service-worker.js": "/project5-reactApp/service-worker.js",
+    "static/css/main.b6a3d257.chunk.css.map": "/project5-reactApp/static/css/main.b6a3d257.chunk.css.map",
+    "static/js/2.224d5401.chunk.js.LICENSE.txt": "/project5-reactApp/static/js/2.224d5401.chunk.js.LICENSE.txt",
+    "static/media/blackWhite-logo.png": "/project5-reactApp/static/media/blackWhite-logo.f1f414da.png",
+    "static/media/App.scss": "/project5-reactApp/static/media/header.b9cf413b.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.16d6d55c.js",
+    "static/js/runtime-main.6b007c8c.js",
     "static/js/2.224d5401.chunk.js",
-    "static/css/main.3b10c460.chunk.css",
-    "static/js/main.2bc8916d.chunk.js"
+    "static/css/main.b6a3d257.chunk.css",
+    "static/js/main.164ba6e4.chunk.js"
   ]
 }
