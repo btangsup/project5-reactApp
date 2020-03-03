@@ -2,10 +2,6 @@ import React, {Component} from 'react';
 
 
 class Results extends Component {
-constructor() {
-    super();
-
-}
 
 render() {
 	return (
@@ -13,9 +9,9 @@ render() {
 		<div className="genreBackground">
 			<h1 className="genreTitle">{this.props.genreTitle === "" ? "Random Genre" : `🎵 T.O. ${this.props.genreTitle} Results🎵`}</h1>
 		</div>
-				<ul className="flexContainer wrapper">
-					{
-						this.props.userSelectedEvent ? this.props.event.map(event => {
+			<ul className="flexContainer wrapper">
+				{
+					this.props.userSelectedEvent ? this.props.event.map(event => {
 						return (
 							<li key={event.id}className="resultContainer">
 								<h2 className="eventTitle">{event.name}</h2>
@@ -30,17 +26,16 @@ render() {
 									/>
 								</div>
 								<a className="ticketLink" target="_blank" href={event.url}>Buy Tickets</a>
-								{/* <a href="">{event._embedded.attractions[0].name}</a>  look at this for help cue*/}
 							</li>
 						);	
-						}) : console.log('nothing')  
-					}
-				</ul>
-				<button className="scrollToTopBtn" onClick={this.props.scrollToTop}>
-					<i className="far fa-arrow-alt-circle-up"></i>
-					<p>scroll to top</p>
-				</button>
-			</main>
+					}) : null 
+				}
+			</ul>
+			<button className="scrollToTopBtn" onClick={this.props.scrollToTop}>
+				<i className="far fa-arrow-alt-circle-up"></i>
+				<p>scroll to top</p>
+			</button>
+		</main>
 		);
 	}
 }

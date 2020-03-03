@@ -5,7 +5,7 @@ const Preloader = () => {
         <div className="preloaderContainer">
             <h2>Fetching Events</h2>
             <span>
-                <i class="preloader fas fa-music"></i>
+                <i className="preloader fas fa-music"></i>
             </span>
         </div>
     )
